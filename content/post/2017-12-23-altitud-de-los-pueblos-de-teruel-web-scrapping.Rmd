@@ -2,10 +2,9 @@
 title: Altitud de los pueblos de Teruel (web scrapping)
 author: Pedro J. Pérez
 date: '2017-12-23'
-slug: altitud-de-los-pueblos-de-teruel-web-scrapping
-categories: []
 tags:
   - web scrapping
+slug: altitud-de-los-pueblos-de-teruel-web-scrapping
 ---
 
 
@@ -38,11 +37,11 @@ Me ha dado por aprender a hacer [web scrapping](https://es.wikipedia.org/wiki/We
 Con ello podré ver que pueblo de Teruel está más alto. Con lo fácil que sería hacerlo desde la propia wiki: como la tablas es un `<table class="sortable wikitable" border="1">` solo hay que pinchar en la tabla; pero para aprender, obviously, hay que hacerlo con R!!!
 
 
-Ese era el objetivo, pero... me he liado!!
+Ese era el objetivo, pero... me he liado un poco!! y voy a mostrar 2 pkgs de R.
 
 <br>
 
-# Pero... me he liado
+# 2 "nuevos" packages
 
 Y he visto/utilizado 2 nuevos packages: `webshot` y `magick`
 
