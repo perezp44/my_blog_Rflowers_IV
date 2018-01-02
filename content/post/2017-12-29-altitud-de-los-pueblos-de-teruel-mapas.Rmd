@@ -26,7 +26,7 @@ library("tidyverse")
 En el post anterior hice [web scrapping](https://es.wikipedia.org/wiki/Web_scraping) bajándome una tabla con los municipios de Teruel y su altitud; pero no hice ningún mapa. Hoy voy a hacerlos.
 
 
-Primero hace falta bajarse [esta tabla](https://es.wikipedia.org/wiki/Anexo:Municipios_de_la_provincia_de_Teruel) de la Wikipedia con las altitudes y guardarla en un dataframe. Esto lo expliqué en el anterior post así que ya tenemos la tabla en el dataframe `Teruel` (Como veis no se referenciar dentro del blog)
+Primero hace falta bajarse [esta tabla](https://es.wikipedia.org/wiki/Anexo:Municipios_de_la_provincia_de_Teruel) de la Wikipedia con las altitudes y guardarla en un dataframe. Esto lo expliqué en el [post anterior](http://rflowers4.netlify.com/blog/2017/12/23/altitud-de-los-pueblos-de-teruel-web-scrapping/) así que ya tenemos la tabla con las altitudes almacenada en un dataframe que se llama `Teruel`.
 
 
 ```{r, echo = FALSE}
