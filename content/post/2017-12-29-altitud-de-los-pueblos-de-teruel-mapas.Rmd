@@ -161,7 +161,7 @@ Las 3 poblaciones en marrón (densidad > q casi 60) son en este orden Utrillas, 
 
 <br>
 
-Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes, usé `ggmpap`  `leaflet` y `ggplot2`, pero todo se olvida, y en cuanto a manipulación de datos espaciales es que prefiero empezar por lo nuevo; that is, el pkg `sf`. `r emo::ji("sunglasses")`
+Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes. Usé `ggmpap`  `leaflet` y `ggplot2` y alguno más, pero todo se olvida, y ahora prefiero empezar con madatos espaciales por lo nuevo; that is, el pkg `sf`. `r emo::ji("sunglasses")`.
 
 <br>
 
