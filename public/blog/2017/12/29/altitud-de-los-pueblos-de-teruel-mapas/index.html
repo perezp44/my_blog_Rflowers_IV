@@ -271,7 +271,7 @@ municipios@data &lt;-  left_join( municipios@data , Teruel, by = c(&quot;NombreM
 <p><img src="../../../../../post/2017-12-29-altitud-de-los-pueblos-de-teruel-mapas_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Gráfico de los municipios por altura. En color azulito las zonas por debajo de 600 metros, aproximadamente el <a href="https://es.wikipedia.org/wiki/Bajo_Arag%C3%B3n">Bajo Aragón</a>. En marrón oscuro las zonas más altas entre ellas mi pueblo.</p>
 <p>Tengo que aprender un poco de palettes!! Justo cabo de ver <a href="https://github.com/AndreaCirilloAC/paletter">este pkg</a></p>
-<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😨 😀</p>
+<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😱 😃</p>
 <p><br></p>
 <div id="mapa-con-los-pueblos-mas-altos-que-pancrudo" class="section level2">
 <h2>Mapa con los pueblos más altos que Pancrudo</h2>
@@ -297,8 +297,8 @@ plot(municipios[ sel, ], col = &quot;red&quot;, add = TRUE) # add selected zones
 <p>Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes. Usé <code>ggmpap</code> <code>leaflet</code> y <code>ggplot2</code> y alguno más, pero todo se olvida, y ahora prefiero empezar con madatos espaciales por lo nuevo; that is, el pkg <code>sf</code>. 😎.</p>
 <p><br></p>
 <p><strong>P.S:</strong> (Bastante técnico, al menos para mi)</p>
-<p>Resulta que yo quería haber puesto los 2 post sobre altitudes en uno sólo, pero resulta que pero cuando los juntaba, me daba problemas la datatable. Mirando por internet vi la solución <a href="https://stackoverflow.com/questions/43594039/dt-package-not-working-with-blogdown-using-hugo-future-imperfect-theme">aquí</a>, pero funciona sólo a medias. la verdad es que lo mejor de R es la comunidad de usuarios!!</p>
-<p>La solución era, grabar la datatable como un objeto e insertarla en un iframe. Abajo está el código.</p>
+<p>Resulta que yo quería haber puesto los 2 post sobre altitudes en uno sólo, pero resulta que cuando los juntaba me daba problemas la datatable. Mirando por internet vi la solución <a href="https://stackoverflow.com/questions/43594039/dt-package-not-working-with-blogdown-using-hugo-future-imperfect-theme">aquí</a>, pero funciona sólo a medias. La verdad es que lo mejor de R es la comunidad de usuarios!!</p>
+<p>La solución consiste en grabar la datatable como un objeto e insertarla en un iframe. Abajo está el código.</p>
 <pre class="r"><code>library(DT)
 aa &lt;- decimales_df_pjp(Teruel, 2)  %&gt;% select(1,7,3,5) #- rtdos con 2 decimales
 datatable_Teruel &lt;- datatable(aa, extensions = &#39;Scroller&#39;, options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = &quot;top&quot;)</code></pre>

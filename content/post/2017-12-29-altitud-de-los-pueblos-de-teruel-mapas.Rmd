@@ -167,9 +167,9 @@ Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en ge
 
 **P.S:** (Bastante técnico, al menos para mi)
 
-Resulta que yo quería haber puesto los 2 post sobre altitudes en uno sólo, pero resulta que pero cuando los juntaba, me daba problemas la datatable. Mirando por internet vi la solución [aquí](https://stackoverflow.com/questions/43594039/dt-package-not-working-with-blogdown-using-hugo-future-imperfect-theme), pero funciona sólo a medias. la verdad es que lo mejor de R es la comunidad de usuarios!!
+Resulta que yo quería haber puesto los 2 post sobre altitudes en uno sólo, pero resulta que cuando los juntaba me daba problemas la datatable. Mirando por internet vi la solución [aquí](https://stackoverflow.com/questions/43594039/dt-package-not-working-with-blogdown-using-hugo-future-imperfect-theme), pero funciona sólo a medias. La verdad es que lo mejor de R es la comunidad de usuarios!!
 
-La solución era, grabar la datatable como un objeto e insertarla en un iframe. Abajo está el código. 
+La solución consiste en grabar la datatable como un objeto e insertarla en un iframe. Abajo está el código. 
 
 ```{r, eval = FALSE}
 library(DT)
