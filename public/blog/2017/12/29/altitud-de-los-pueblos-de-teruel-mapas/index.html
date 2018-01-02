@@ -247,7 +247,7 @@
 
   <p>En el post anterior hice <a href="https://es.wikipedia.org/wiki/Web_scraping">web scrapping</a> bajándome una tabla con los municipios de Teruel y su altitud; pero no hice ningún mapa. Hoy voy a hacerlos.</p>
 <p>Primero hace falta bajarse <a href="https://es.wikipedia.org/wiki/Anexo:Municipios_de_la_provincia_de_Teruel">esta tabla</a> de la Wikipedia con las altitudes y guardarla en un dataframe. Esto lo expliqué en el <a href="http://rflowers4.netlify.com/blog/2017/12/23/altitud-de-los-pueblos-de-teruel-web-scrapping/">post anterior</a> así que ya tenemos la tabla con las altitudes almacenada en un dataframe que se llama <code>Teruel</code>.</p>
-<p>Os recordaré que Valdelinares es el pueblo “más alto” de Teruel, seguido de Griegos, pero ¿y mi pueblo? Mi pueblo es <a href="https://es.wikipedia.org/wiki/Pancrudo">Pancrudo</a> y es muuuuy alto, pero veámoslo en un gráfico.</p>
+<p>Os recordaré que Valdelinares es el pueblo “más alto” de Teruel, seguido de Griegos, pero ¿y mi pueblo? Mi pueblo se llama <a href="https://es.wikipedia.org/wiki/Pancrudo">Pancrudo</a> y es muuuuy alto, pero veámoslo en un gráfico.</p>
 <p><br></p>
 <div id="mapa-con-las-altitudes" class="section level1">
 <h1>Mapa con las altitudes</h1>
@@ -271,7 +271,7 @@ municipios@data &lt;-  left_join( municipios@data , Teruel, by = c(&quot;NombreM
 <p><img src="../../../../../post/2017-12-29-altitud-de-los-pueblos-de-teruel-mapas_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Gráfico de los municipios por altura. En color azulito las zonas por debajo de 600 metros, aproximadamente el <a href="https://es.wikipedia.org/wiki/Bajo_Arag%C3%B3n">Bajo Aragón</a>. En marrón oscuro las zonas más altas entre ellas mi pueblo.</p>
 <p>Tengo que aprender un poco de palettes!! Justo cabo de ver <a href="https://github.com/AndreaCirilloAC/paletter">este pkg</a></p>
-<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😱 😀</p>
+<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😨 😀</p>
 <p><br></p>
 <div id="mapa-con-los-pueblos-mas-altos-que-pancrudo" class="section level2">
 <h2>Mapa con los pueblos más altos que Pancrudo</h2>
