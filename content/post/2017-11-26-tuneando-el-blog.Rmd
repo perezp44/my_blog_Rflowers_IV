@@ -48,9 +48,9 @@ Thumbs.db  #- para windows users
 
 - Lo mismo con los datos, me gustaría cargarlo desde Github
 
+**¿Probar?**
 
-- Aún no sé como refernciar dentro de un post a otro post del blog
-
+- [[Figuring out images and disqus with blogdown]](http://kgilds.rbind.io/2017/12/13/images/). 
 
 
 
