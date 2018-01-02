@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R &amp; Flowers 4</title>
+    <link>/</link>
+    <description>Recent content on R &amp; Flowers 4</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>&amp;copy; 2017</copyright>
+    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>About me Me llamo Pedro y llevo unos 3-4 años tratando de aprender R, programación y Data Science (DS). Empece un blog hace dos años (R &amp;amp; Flowers), no escribí mucho pero me gustó la experiencia, así que aquí está R &amp;amp; Flowers IV.
+Mi objetivo con este blog es aprender sobre R y programación. Lo que vaya aprendiendo lo iré subiendo al blog para poder recordarlo luego con mas facilidad.</description>
+    </item>
+    
+    <item>
+      <title>Tuneando el blog</title>
+      <link>/blog/2017/11/27/tuneando-el-blog/</link>
+      <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017/11/27/tuneando-el-blog/</guid>
+      <description>Este post lo utilizaré para ir apuntando lo que aprendo/soluciono al ir tuneando el blog.
+Estoy tuneando el blog usando dos que he visto:
+https://www.mattcraddock.com/http://yoshiharuyamashita.com/ del creador del themehttps://simplystatistics.org/ de Rafa Irizarry, Roger Peng, and Jeff LeekEsta vez creo que medio entenderé como se hacen las web con html, css etc…
+Tengo ya “muchos” post en el cabolo: el de vacas, uno sobre gestionar los kipplings de mi Kindle, otro de temperaturas en Valencia, cesáreas y más.</description>
+    </item>
+    
+    <item>
+      <title>Hello!!</title>
+      <link>/blog/2017/11/26/hello/</link>
+      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017/11/26/hello/</guid>
+      <description>Pues la verdad es que ha sido far far más fácil hacer un Hugo blog que un Jekyll blog. Supongo que Yihui Xie habrá ayudado, pero yo también sepo un poco más que hace ¿dos años? Nada, a ver si consigo tunear a mi gusto el blog.
+Aprovecho para dar mi más sincera enhorabuena a Almudena e Ismael por sus dos cachorillos. Guapos-guapos, como la madre. Enhorabuena!!!
+El primer post de verdad será sobre vacas y felicidad.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>If you have any queries/comments/&amp;hellip;, please contact me at pjperez@uv.es by email.
+You can also contact me on:
+ @pjpv4444   @perezp44   </description>
+    </item>
+    
+  </channel>
+</rss>
