@@ -50,7 +50,7 @@ Teruel <- Teruel %>% mutate(Altitud = as.double(Altitud)) %>%
                      arrange(desc(Altitud))
 ```
 
-Os recordaré que Valdelinares es el pueblo "más alto" de Teruel, seguido de Griegos, pero ¿y mi pueblo? Mi pueblo es muuuy alto, pero veámoslo en un gráfico.
+Os recordaré que Valdelinares es el pueblo "más alto" de Teruel, seguido de Griegos, pero ¿y mi pueblo? Mi pueblo es [Pancrudo](https://es.wikipedia.org/wiki/Pancrudo), y es muuuuy alto, pero veámoslo en un gráfico.
 
 
 <br>
