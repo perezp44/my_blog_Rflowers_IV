@@ -22,7 +22,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   subtitle = "pjperez's blog para aprender y relajarse (con R)"
   brand = "Yoshiharu<br>Yamashita"
   #brand = "R&F" creo que es poner una afoto
-  googleAnalytics = "UA-71846326-2"
+  googleAnalytics = "UA-71846326-4"
   #disqus = "Your Disqus shortname"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
