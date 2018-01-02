@@ -78,7 +78,7 @@ z_merged <- dplyr::left_join(Teruel, municipios_df, by = c("Nombre" = "NAME_4") 
 
 <br>
 
-Primero he cargar los datos de lindes municipales. No quiero liarme mucho así que cargaré el fichero que usaba hace uno/dos añitos. No lo voy a actualizar ni chequear.
+Primero he cargar los datos de lindes municipales. No quiero liarme mucho así que cargaré el fichero que usaba hace uno/dos añitos. No lo voy a actualizar ni chequear. **PERO**, lo que sí que he hecho es crear un package en Github para poder cargar los datos que uso en el blog desde R. Lo puedes ver [aquí](https://github.com/perezp44/mypkgDataforblog). Creo que en el siguiente post contaré cómo y porque lo he hecho. No me quiero liar ahora. Me hacía falta!!
 
 ```{r}
 library(mypkgDataforblog)
