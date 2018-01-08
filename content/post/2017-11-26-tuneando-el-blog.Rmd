@@ -41,6 +41,26 @@ blogdown
 Thumbs.db  #- para windows users
 ```
 
+- A yolo le he visto:
+
+
+```yaml
+https://www.shamindras.com/2017/12/31/getting-tuftesque-with-blogging/  
+# Blogdown common gitignore files
+# Source: https://github.com/rbind/yihui/blob/master/.gitignore
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+public
+static/figures
+blogdown
+
+# Source: https://github.com/kbroman/blog/blob/source/.gitignore
+_cache/
+drafts/
+```
+
 **COSAS a mejorar:**
 
 - Las imágenes las he de poner en `/static/` pero a mi me gustaría cargarlas directamente de Github, ¿Cómo?
