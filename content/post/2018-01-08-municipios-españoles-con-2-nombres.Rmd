@@ -1,10 +1,8 @@
 ---
 title: Municipios españoles con 2 nombres
 author: Pedro J. Pérez
-date: '2018-01-08'
+date: '2018-01-07'
 slug: municipios-españoles-con-2-nombres
-categories: []
-tags: []
 ---
 
 
