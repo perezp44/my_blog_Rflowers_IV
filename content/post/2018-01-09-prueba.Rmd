@@ -1,0 +1,10 @@
+---
+title: Prueba
+author: Yo
+date: '2018-01-09'
+slug: prueba
+categories: []
+tags: []
+---
+
+Pues q me he cargado el blog jugando con las htmlwidgets!!!
