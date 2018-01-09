@@ -126,7 +126,7 @@ La verdad es que por provincias los resultados *"cambian"*, incluso hay cuatro p
 Para el que tenga curiosidad en ver exactamente que municipios son los que tienen dos nombres, lo puede hacer en el siguiente cuadro:
 
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 #- datatable
 aa <- df %>% filter(yes_2_names != 0) %>% 
   select(NombreMuni, NombreProv, NombreCCAA)
@@ -272,6 +272,6 @@ En mi caso, he evitado hacer comentarios/especulaciones sobre motivos por los qu
 Agur
 
 
-[^1]: A los 30 minutos de dar por cerrado el post ya he encontrado tres municipios que contienen `-` en su nombre porque es un nombre compuesto: dos en el País Vasco (`Gernika-Lumo` y `Bidania-Goiatz`) y uno en Navarra (`Tiebas-Muruarte de Reta`). Seguro que hay alguno más!! , pero ya no lo corrijo, al menos por hoy. Tengo justificaciones varias: "La perfección es una pulida colección de errores" (Mario Benedetti), o "La perfección se logra al fin, no cuando no hay nada que agregar, sino cuando ya no hay nada que obtener" (Antoine de Saint-Exupéry) o "Procurando lo mejor estropeamos a menudo lo que está bien" (William Shakespeare) o "buscó perfección y encontró dolor" (mía, a medias, la original que me rondaba la cabeza es "la vida es parte buscar placer y parte hallar dolor" de Nacho Vegas) y muchas más que puedes encontrar en www.proverbia.net o similares.
+[^1]: A los 30 minutos de dar por cerrado el post ya he encontrado tres municipios que contienen `-` en su nombre porque es un nombre compuesto: dos en el País Vasco (`Gernika-Lumo` y `Bidania-Goiatz`) y uno en Navarra (`Tiebas-Muruarte de Reta`). Seguro que hay alguno más!! , pero ya no lo corrijo, al menos por hoy. Tengo justificaciones varias: "La perfección es una pulida colección de errores" (Mario Benedetti), o "La perfección se logra al fin, no cuando no hay nada que agregar, sino cuando ya no hay nada que obtener" (Antoine de Saint-Exupéry) o "Procurando lo mejor estropeamos a menudo lo que está bien" (William Shakespeare) o "buscando perfección encontró dolor" (mía, a medias, la original que me rondaba la cabeza es "la vida es parte buscar placer y parte hallar dolor" de Nacho Vegas) y muchas más que puedes encontrar en www.proverbia.net o similares.
 
 
