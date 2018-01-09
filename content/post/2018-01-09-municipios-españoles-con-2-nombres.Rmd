@@ -246,7 +246,7 @@ df_2 <- df_2 %>% filter(!(INECodCCAA == "10" & str_detect(NombreMuni, "-")))  #-
 ```
 
 
-```{r}
+```{r, eval = FALSE}
 #- datatable
 aa <- df_2 %>% select(NombreMuni, NombreProv, NombreCCAA)
 
