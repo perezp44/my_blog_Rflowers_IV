@@ -24,7 +24,7 @@ Esta vez creo que medio entenderé como se hacen las web con html, css etc…
 Tengo ya "muchos" post en el cabolo: el de vacas, uno sobre gestionar los kipplings de mi Kindle, otro de temperaturas en Valencia, cesáreas y más. Massa
 
 
-**COSAS a recordar:**
+## COSAS a recordar:**
 
 - El logo (el ababol) está en el config-toml en `brand`. La afoto está en `./static/img/logo.jpg`, y el trozo de código está en `. /layout/partials/brand.html`. Me explico, eh!
 
@@ -61,14 +61,18 @@ _cache/
 drafts/
 ```
 
-**COSAS a mejorar:**
+## COSAS a mejorar:
 
 - Las imágenes las he de poner en `/static/` pero a mi me gustaría cargarlas directamente de Github, ¿Cómo?
 
 
-- Lo mismo con los datos, me gustaría cargarlo desde Github
+- Lo mismo con los datos, me gustaría cargarlo desde Github (ahora los datos desde un pkg en Github)
 
-**¿Probar?**
+- Las tablas que hago con kable me salen más feas en el blog que si las kniteo en RStudio
+
+
+
+## ¿Probar?
 
 - [[Figuring out images and disqus with blogdown]](http://kgilds.rbind.io/2017/12/13/images/). 
 
