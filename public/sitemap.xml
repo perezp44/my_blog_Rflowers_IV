@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>/blog/2018/01/08/municipios-espa%C3%B1oles-con-2-nombres/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/2017/12/29/altitud-de-los-pueblos-de-teruel-mapas/</loc>
     <lastmod>2017-12-29T00:00:00+00:00</lastmod>
   </url>
@@ -38,13 +43,13 @@
   </url>
   
   <url>
-    <loc>/topics/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2017-11-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/blog/</loc>
+    <loc>/topics/blog/</loc>
     <lastmod>2017-11-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
