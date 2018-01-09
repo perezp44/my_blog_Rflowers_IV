@@ -98,8 +98,9 @@ Hagamos el cuadro [^1]:
 
 ```{r}
 library(knitr)
-aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") 
+# %>%
+#  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 En total hay 119 municipios con dos nombres. Como en el listado que manejo hay 8.125 municipios esto supone tan sólo el 1,46%, digo tan sólo porque en Bélgica son un 16%. La mayoría de ellos están en Navarra, concretamente 64. Con mucha diferencia Navarra es, con un 23,5%, la Comunidad con mayor porcentaje de municipios con 2 nombres.
@@ -132,9 +133,12 @@ aa <- df %>% filter(yes_2_names != 0) %>%
   select(NombreMuni, NombreProv, NombreCCAA)
 ```
 
+ver
+
 ```{r}
 library(DT)
-datatable(aa, caption = "Cuadro 3: Municipios con dos nombres oficiales",extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
+datatable(aa, extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
+#caption = "Cuadro 3: Municipios con dos nombres oficiales",
 ```
 
 
