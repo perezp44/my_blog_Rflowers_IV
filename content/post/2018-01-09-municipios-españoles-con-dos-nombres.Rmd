@@ -98,7 +98,7 @@ Hagamos el cuadro:
 
 ```{r}
 library(knitr)
-aa %>% kable("html", caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>%
+aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -115,7 +115,7 @@ aa <- df %>% group_by(NombreProv) %>%
   arrange(desc(percent))
 
 #- tabla simple
-aa %>% kable("html", caption = "Cuadro 2: Municipios españoles con dos nombres oficiales (por provincia)") %>%
+aa %>% kable("html", digits = 2, caption = "Cuadro 2: Municipios españoles con dos nombres oficiales (por provincia)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -126,7 +126,7 @@ La verdad es que por provincias los resultados *"cambian"*, incluso hay cuatro p
 Para el que tenga curiosidad en ver exactamente que municipios son los que tienen dos nombres, lo puede hacer en el siguiente cuadro:
 
 
-```{r, eval = TRUE}
+```{r}
 #- datatable
 aa <- df %>% filter(yes_2_names != 0) %>% 
   select(NombreMuni, NombreProv, NombreCCAA)
@@ -202,7 +202,7 @@ aa <- df %>% group_by(NombreCCAA) %>%
        summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %>%        filter(Muni_2_nombres != 0) %>% 
        arrange(desc(percent))
 
-aa %>% kable("html", caption = "Cuadro 1a: Municipios españoles con \"dos nombres\" oficiales (por CC.AA.)") %>%
+aa %>% kable("html", digits = 2, caption = "Cuadro 1a: Municipios españoles con \"dos nombres\" oficiales (por CC.AA.)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -223,7 +223,7 @@ aa <- df %>% group_by(NombreProv) %>%
        summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %>%        filter(Muni_2_nombres != 0) %>% 
        arrange(desc(percent))
 
-aa %>% kable("html", caption = "Cuadro 2a: Municipios españoles con \"dos nombres\" oficiales (por provincias)") %>%
+aa %>% kable("html", digits = 2, caption = "Cuadro 2a: Municipios españoles con \"dos nombres\" oficiales (por provincias)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -249,13 +249,17 @@ df_2 <- df_2 %>% filter(!(INECodCCAA == "10" & str_detect(NombreMuni, "-")))  #-
 ```
 
 
-```{r, eval = FALSE}
+```{r}
 #- datatable
 aa <- df_2 %>% select(NombreMuni, NombreProv, NombreCCAA)
+```
 
+```{r}
 library(DT)
 datatable(aa, caption = "Cuadro 3a: (nuevos) Municipios con \"dos nombres oficiales\"",extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 ```
+
+
 
 
 <br>

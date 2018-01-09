@@ -61,7 +61,7 @@ df  &lt;- read_excel(&quot;./datos/cod_2_municipios.xlsx&quot;)</code></pre>
 <p>Hagamos el cuadro:</p>
 <p><br></p>
 <pre class="r"><code>library(knitr)
-aa %&gt;% kable(&quot;html&quot;, caption = &quot;Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)&quot;) %&gt;%
+aa %&gt;% kable(&quot;html&quot;, digits = 2, caption = &quot;Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -95,7 +95,7 @@ Navarra, Comunidad Foral de
 64
 </td>
 <td style="text-align:right;">
-0.2352941
+0.24
 </td>
 </tr>
 <tr>
@@ -109,7 +109,7 @@ País Vasco
 22
 </td>
 <td style="text-align:right;">
-0.0876494
+0.09
 </td>
 </tr>
 <tr>
@@ -123,7 +123,7 @@ Comunitat Valenciana
 33
 </td>
 <td style="text-align:right;">
-0.0608856
+0.06
 </td>
 </tr>
 </tbody>
@@ -136,7 +136,7 @@ Comunitat Valenciana
   arrange(desc(percent))
 
 #- tabla simple
-aa %&gt;% kable(&quot;html&quot;, caption = &quot;Cuadro 2: Municipios españoles con dos nombres oficiales (por provincia)&quot;) %&gt;%
+aa %&gt;% kable(&quot;html&quot;, digits = 2, caption = &quot;Cuadro 2: Municipios españoles con dos nombres oficiales (por provincia)&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -170,7 +170,7 @@ Araba/Álava
 18
 </td>
 <td style="text-align:right;">
-0.3529412
+0.35
 </td>
 </tr>
 <tr>
@@ -184,7 +184,7 @@ Navarra
 64
 </td>
 <td style="text-align:right;">
-0.2352941
+0.24
 </td>
 </tr>
 <tr>
@@ -198,7 +198,7 @@ Alicante/Alacant
 14
 </td>
 <td style="text-align:right;">
-0.0992908
+0.10
 </td>
 </tr>
 <tr>
@@ -212,7 +212,7 @@ Castellón/Castelló
 13
 </td>
 <td style="text-align:right;">
-0.0962963
+0.10
 </td>
 </tr>
 <tr>
@@ -226,7 +226,7 @@ Gipuzkoa
 2
 </td>
 <td style="text-align:right;">
-0.0227273
+0.02
 </td>
 </tr>
 <tr>
@@ -240,7 +240,7 @@ Valencia/València
 6
 </td>
 <td style="text-align:right;">
-0.0225564
+0.02
 </td>
 </tr>
 <tr>
@@ -254,7 +254,7 @@ Bizkaia
 2
 </td>
 <td style="text-align:right;">
-0.0178571
+0.02
 </td>
 </tr>
 </tbody>
@@ -316,7 +316,7 @@ aa &lt;- df %&gt;% group_by(NombreCCAA) %&gt;%
        summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %&gt;%        filter(Muni_2_nombres != 0) %&gt;% 
        arrange(desc(percent))
 
-aa %&gt;% kable(&quot;html&quot;, caption = &quot;Cuadro 1a: Municipios españoles con \&quot;dos nombres\&quot; oficiales (por CC.AA.)&quot;) %&gt;%
+aa %&gt;% kable(&quot;html&quot;, digits = 2, caption = &quot;Cuadro 1a: Municipios españoles con \&quot;dos nombres\&quot; oficiales (por CC.AA.)&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -350,7 +350,7 @@ Navarra, Comunidad Foral de
 70
 </td>
 <td style="text-align:right;">
-0.2573529
+0.26
 </td>
 </tr>
 <tr>
@@ -364,7 +364,7 @@ País Vasco
 45
 </td>
 <td style="text-align:right;">
-0.1792829
+0.18
 </td>
 </tr>
 <tr>
@@ -378,7 +378,7 @@ Comunitat Valenciana
 33
 </td>
 <td style="text-align:right;">
-0.0608856
+0.06
 </td>
 </tr>
 <tr>
@@ -392,7 +392,7 @@ Balears, Illes
 1
 </td>
 <td style="text-align:right;">
-0.0149254
+0.01
 </td>
 </tr>
 </tbody>
@@ -408,7 +408,7 @@ aa &lt;- df %&gt;% group_by(NombreProv) %&gt;%
        summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %&gt;%        filter(Muni_2_nombres != 0) %&gt;% 
        arrange(desc(percent))
 
-aa %&gt;% kable(&quot;html&quot;, caption = &quot;Cuadro 2a: Municipios españoles con \&quot;dos nombres\&quot; oficiales (por provincias)&quot;) %&gt;%
+aa %&gt;% kable(&quot;html&quot;, digits = 2, caption = &quot;Cuadro 2a: Municipios españoles con \&quot;dos nombres\&quot; oficiales (por provincias)&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -442,7 +442,7 @@ Araba/Álava
 25
 </td>
 <td style="text-align:right;">
-0.4901961
+0.49
 </td>
 </tr>
 <tr>
@@ -456,7 +456,7 @@ Navarra
 70
 </td>
 <td style="text-align:right;">
-0.2573529
+0.26
 </td>
 </tr>
 <tr>
@@ -470,7 +470,7 @@ Bizkaia
 13
 </td>
 <td style="text-align:right;">
-0.1160714
+0.12
 </td>
 </tr>
 <tr>
@@ -484,7 +484,7 @@ Alicante/Alacant
 14
 </td>
 <td style="text-align:right;">
-0.0992908
+0.10
 </td>
 </tr>
 <tr>
@@ -498,7 +498,7 @@ Castellón/Castelló
 13
 </td>
 <td style="text-align:right;">
-0.0962963
+0.10
 </td>
 </tr>
 <tr>
@@ -512,7 +512,7 @@ Gipuzkoa
 7
 </td>
 <td style="text-align:right;">
-0.0795455
+0.08
 </td>
 </tr>
 <tr>
@@ -526,7 +526,7 @@ Valencia/València
 6
 </td>
 <td style="text-align:right;">
-0.0225564
+0.02
 </td>
 </tr>
 <tr>
@@ -540,7 +540,7 @@ Balears, Illes
 1
 </td>
 <td style="text-align:right;">
-0.0149254
+0.01
 </td>
 </tr>
 </tbody>
@@ -559,10 +559,11 @@ df_2 &lt;- df_2 %&gt;% filter(INECodCCAA %in% CCAA_in)  #- 33
 #---- quito los municipios valencianos con nombre compuesto
 df_2 &lt;- df_2 %&gt;% filter(!(INECodCCAA == &quot;10&quot; &amp; str_detect(NombreMuni, &quot;-&quot;)))  #- 31</code></pre>
 <pre class="r"><code>#- datatable
-aa &lt;- df_2 %&gt;% select(NombreMuni, NombreProv, NombreCCAA)
-
-library(DT)
+aa &lt;- df_2 %&gt;% select(NombreMuni, NombreProv, NombreCCAA)</code></pre>
+<pre class="r"><code>library(DT)
 datatable(aa, caption = &quot;Cuadro 3a: (nuevos) Municipios con \&quot;dos nombres oficiales\&quot;&quot;,extensions = &#39;Scroller&#39;, options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = &quot;top&quot; )</code></pre>
+<div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Scroller"],"caption":"<caption>Cuadro 3a: (nuevos) Municipios con \"dos nombres oficiales\"<\/caption>","data":[["Alegría-Dulantzi","Arraia-Maeztu","Arratzua-Ubarrundia","Iruraiz-Gauna","Oyón-Oion","Peñacerrada-Urizaharra","Vitoria-Gasteiz","Maó-Mahón","Bidania-Goiatz","Ezkio-Itsaso","Lasarte-Oria","Leintz-Gatzaga","Soraluze-Placencia de las Armas","Beintza-Labaien","Biurrun-Olcoz","Estella-Lizarra","Lizoáin-Arriasgoiti","Oroz-Betelu/Orotz-Betelu","Tiebas-Muruarte de Reta","Urroz-Villa","Abanto y Ciérvana-Abanto Zierbena","Amorebieta-Etxano","Gamiz-Fika","Gernika-Lumo","Markina-Xemein","Maruri-Jatabe","Munitibar-Arbatzegi Gerrikaitz","Trucios-Turtzioz","Ugao-Miraballes","Valle de Trápaga-Trapagaran","Ziortza-Bolibar"],["Araba/Álava","Araba/Álava","Araba/Álava","Araba/Álava","Araba/Álava","Araba/Álava","Araba/Álava","Balears, Illes","Gipuzkoa","Gipuzkoa","Gipuzkoa","Gipuzkoa","Gipuzkoa","Navarra","Navarra","Navarra","Navarra","Navarra","Navarra","Navarra","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia","Bizkaia"],["País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","Balears, Illes","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","Navarra, Comunidad Foral de","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco","País Vasco"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>NombreMuni<\/th>\n      <th>NombreProv<\/th>\n      <th>NombreCCAA<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"deferRender":true,"scrollY":400,"scroller":true,"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true},"selection":{"mode":"multiple","selected":null,"target":"row"}},"evals":[],"jsHooks":[]}</script>
 <p><br></p>
 <p>Se acabo!!! Faltan los mapas, pero para otro día/post. Me están entrando ganas de ver que provincia/CC.AA. española tiene mas municipios con nombre compuesto; por lo que he ido viendo al hacer el post apostaría por una de las dos Castillas, casi por Castilla-La Mancha, pero me resisto a la tentación.</p>
 <p><br></p>
