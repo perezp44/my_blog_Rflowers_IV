@@ -1,4 +1,4 @@
-baseurl = "/"    #baseurl = "https://www.example.com/"
+baseurl = "http://rflowers4.netlify.com/"      #"/"    #baseurl = "https://www.example.com/"
 languageCode = "es"
 title = "R & Flowers 4"
 theme = "blackburn"
