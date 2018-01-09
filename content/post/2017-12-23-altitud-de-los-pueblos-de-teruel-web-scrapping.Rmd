@@ -12,7 +12,7 @@ slug: altitud-de-los-pueblos-de-teruel-web-scrapping
 
 
 ```{r chunk_setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, cache = FALSE, cache.path = "./caches/", eval = TRUE )
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = TRUE )
 ```
 
 ```{r options_setup, echo = FALSE}
