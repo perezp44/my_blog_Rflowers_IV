@@ -3,7 +3,8 @@ title: Altitud de los pueblos de Teruel (mapas)
 author: Pedro J. Pérez
 date: '2017-12-29'
 slug: altitud-de-los-pueblos-de-teruel-mapas
-categories: []
+topics:
+  - municipios
 tags:
   - maps
 ---
