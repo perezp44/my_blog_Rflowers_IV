@@ -98,9 +98,7 @@ Hagamos el cuadro [^1]:
 
 ```{r}
 library(knitr)
-aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") 
-# %>%
-#  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 En total hay 119 municipios con dos nombres. Como en el listado que manejo hay 8.125 municipios esto supone tan sólo el 1,46%, digo tan sólo porque en Bélgica son un 16%. La mayoría de ellos están en Navarra, concretamente 64. Con mucha diferencia Navarra es, con un 23,5%, la Comunidad con mayor porcentaje de municipios con 2 nombres.
@@ -133,12 +131,12 @@ aa <- df %>% filter(yes_2_names != 0) %>%
   select(NombreMuni, NombreProv, NombreCCAA)
 ```
 
-ver
+
 
 ```{r}
 library(DT)
-datatable(aa, extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
-#caption = "Cuadro 3: Municipios con dos nombres oficiales",
+datatable(aa, extensions = 'Scroller', caption = "Cuadro 3: Municipios con dos nombres oficiales", options = list( pageLength = 10, deferRender = TRUE, scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
+
 ```
 
 
@@ -288,6 +286,6 @@ Agur
 [^2]: Las 2 datatables que tendría que tener el post no se muestran bien. Ya vorem como lo soluciono. Parece que es un problema del Hugo theme.
 
 
-[^3]: A los 30 minutos de dar por cerrado el post ya he encontrado tres municipios que contienen `-` en su nombre porque es un nombre compuesto: dos en el País Vasco (`Gernika-Lumo` y `Bidania-Goiatz`) y uno en Navarra (`Tiebas-Muruarte de Reta`). Seguro que hay alguno más!! , pero ya no lo corrijo, al menos por hoy. Tengo justificaciones varias: "La perfección es una pulida colección de errores" (Mario Benedetti), o "La perfección se logra al fin, no cuando no hay nada que agregar, sino cuando ya no hay nada que obtener" (Antoine de Saint-Exupéry) o "Procurando lo mejor estropeamos a menudo lo que está bien" (William Shakespeare) o "buscando perfección encontró dolor" (mía, a medias, la original que me rondaba la cabeza es "la vida es parte buscar placer y parte hallar dolor" de Nacho Vegas) y muchas más que puedes encontrar en www.proverbia.net o similares. No he conseguido arreglar el formato de las tablas, y las datatables no salen!! `r emo::ji("-1")`
+[^3]: A los 30 minutos de dar por cerrado el post ya he encontrado tres municipios que contienen `-` en su nombre porque es un nombre compuesto: dos en el País Vasco (`Gernika-Lumo` y `Bidania-Goiatz`) y uno en Navarra (`Tiebas-Muruarte de Reta`). Seguro que hay alguno más!! , pero ya no lo corrijo, al menos por hoy. Tengo justificaciones varias: "La perfección es una pulida colección de errores" (Mario Benedetti), o "La perfección se logra al fin, no cuando no hay nada que agregar, sino cuando ya no hay nada que obtener" (Antoine de Saint-Exupéry) o "Procurando lo mejor estropeamos a menudo lo que está bien" (William Shakespeare) o "buscando perfección encontró dolor" (mía, a medias, la original que me rondaba la cabeza es "la vida es parte buscar placer y parte hallar dolor" de Nacho Vegas) y muchas más que puedes encontrar en www.proverbia.net o similares. No he conseguido arreglar el formato de las tablas, y las datatables no salen!! `r emo::ji("-1")`. Al final tendré que cambiar el theme.
 
 
