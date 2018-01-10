@@ -125,16 +125,13 @@ La verdad es que por provincias los resultados *"cambian"*, incluso hay cuatro p
 Para el que tenga curiosidad en ver exactamente que municipios son los que tienen dos nombres, lo puede hacer en el siguiente cuadro (que sale muy bonito cuando se knitea en RStudio, pero [^2] ...) :
 
 
+
+
 ```{r}
 #- datatable
+library(DT)
 aa <- df %>% filter(yes_2_names != 0) %>% 
   select(NombreMuni, NombreProv, NombreCCAA)
-```
-
-
-
-```{r}
-library(DT)
 datatable(aa, extensions = 'Scroller', caption = "Cuadro 3: Municipios con dos nombres oficiales", options = list( pageLength = 10, deferRender = TRUE, scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 
 ```
@@ -260,7 +257,7 @@ df_2 <- df_2 %>% filter(!(INECodCCAA == "10" & str_detect(NombreMuni, "-")))  #-
 aa <- df_2 %>% select(NombreMuni, NombreProv, NombreCCAA)
 ```
 
-```{r}
+```{r, eval = FALSE}
 library(DT)
 datatable(aa, caption = "Cuadro 3a: (nuevos) Municipios con \"dos nombres oficiales\"",extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 ```
