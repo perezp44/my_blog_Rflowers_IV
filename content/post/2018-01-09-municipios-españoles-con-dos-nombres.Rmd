@@ -127,12 +127,12 @@ Para el que tenga curiosidad en ver exactamente que municipios son los que tiene
 
 
 
-```{r}
+```{r, eval = TRUE}
 #- datatable
 library(DT)
-aa <- df %>% filter(yes_2_names != 0) %>% 
+cc <- df %>% filter(yes_2_names != 0) %>% 
   select(NombreMuni, NombreProv, NombreCCAA)
-datatable(aa, extensions = 'Scroller', caption = "Cuadro 3: Municipios con dos nombres oficiales", options = list( pageLength = 10, deferRender = TRUE, scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
+datatable(cc, extensions = 'Scroller', caption = "Cuadro 3: Municipios con dos nombres oficiales", options = list( pageLength = 10, deferRender = TRUE, scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 
 ```
 

@@ -25,7 +25,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   googleAnalytics = "UA-71846326-4"
   #disqus = "Your Disqus shortname"
   # CSS name for highlight.js
-  highlightjs = "androidstudio"
+  highlightjs = "github"   #androidstudio
   dateFormat = "02 Jan 2006"
   #custom_css = ["css/custom.css"]
   
