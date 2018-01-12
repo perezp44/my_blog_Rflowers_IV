@@ -1,0 +1,13 @@
+---
+title: Prueba
+author: Pedro J. Pérez
+date: '2018-01-12'
+slug: prueba
+categories: []
+tags: []
+---
+
+
+Pues eso, que esto es una prueba.
+resulta que parece que Hugo tiene problemas para mostrar htmlwidget en el ultimo post, asi que lanzo este post de prueba, asi si se ve la datatable del post anterior
+Bye
