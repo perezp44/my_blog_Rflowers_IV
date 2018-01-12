@@ -23,6 +23,9 @@ slug: tuneando-el-blog
 <div id="cosas-a-recordar" class="section level2">
 <h2>COSAS a recordar:**</h2>
 <ul>
+<li><p>Para iniciar el blog:</p></li>
+<li><p>En RStudio crea un nuevo proyecto (WEb Site with Hugo). Has de poner el theme, yo he puesto <code>yoshiharuyamashita/blackburn</code> pero tiene pbs con los htmlwidget, así que pruebo el theme “hugo-tranquilpeak-theme” que lo has de poner como <code>kakawait/hugo-tranquilpeak-theme</code>. Se lo ví a <a href="https://aurora-mareviv.github.io/" class="uri">https://aurora-mareviv.github.io/</a></p></li>
+<li><p>Si quieres que el deploy sea en ./docs de Github tienes que incluir en el config. toml: <code>publishDir = &quot;docs&quot;</code> ; y ademas incluir un archivo named .nojekyll in the root of your pages repo and pushing it to GitHub. This should only be necessary if your site uses files or directories that start with underscores since Jekyll considers these to be special resources and does not copy them to the final site.</p></li>
 <li><p>El logo (el ababol) está en el config-toml en <code>brand</code>. La afoto está en <code>./static/img/logo.jpg</code>, y el trozo de código está en <code>. /layout/partials/brand.html</code>. Me explico, eh!</p></li>
 <li>Cuando haces el deploy en Netlify en las opciones de Build &amp; Deploy has de (lo explica en blogdown):
 <ul>
