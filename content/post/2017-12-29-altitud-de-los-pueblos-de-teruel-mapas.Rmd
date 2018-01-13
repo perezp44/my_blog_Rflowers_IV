@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, cache = FAL
 options(scipen = 999) #- para quitar la notacion científica
 ```
  
+
 ```{r cargar_pkgs, echo = FALSE}
 library("personal.pjp")
 library("tidyverse")
@@ -115,17 +116,37 @@ Pues ya está. Sólo queda hacer el gráfico con `sp::spplot`:
 sp::spplot(municipios, zcol = "Altitud", cuts = 2, col.regions  = c("cadetblue1", "antiquewhite2", "antiquewhite4"))
 ```
 
+
 Gráfico de los municipios por altura. En color azulito las zonas por debajo de 600 metros, aproximadamente el [Bajo Aragón](https://es.wikipedia.org/wiki/Bajo_Arag%C3%B3n). En marrón oscuro las zonas más altas entre ellas mi pueblo. 
 
 
 Tengo que aprender un poco de palettes!! Justo cabo de ver [este pkg](https://github.com/AndreaCirilloAC/paletter)
 
 
+
+Pero seguro que con `tmap` sale más bonito, y voy a dar más cortes en la escala
+
+
+```{r}
+library(tmap)
+library(viridisLite)
+
+  tm_shape(municipios, alpha = 0.3) +
+  tm_fill(col = "Altitud", title = "Altitud", n = 5) +
+  tm_polygons(border.alpha = 0.6) +
+  tm_layout(legend.position = c("right", "bottom"))
+```
+
+Sí!! Sale más bonito.
+
+<br>
+
 Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!!  `r emo::ji("fear")` `r emo::ji(":D")`
 
 <br>
 
 ## Mapa con los pueblos más altos que Pancrudo
+
 
 ```{r, eval = TRUE, collapse = TRUE}
 #jpeg("./grafico_altura_Teruel.jpg")
@@ -154,15 +175,18 @@ municipios@data$Densidad <- as.double(municipios@data$Densidad )
 
 ## Mapa por densidad de población
 
-```{r}
+```{r, eval = FALSE}
 sp::spplot(municipios, zcol = "Densidad", cuts = 2, col.regions  = c("cadetblue1", "antiquewhite2", "antiquewhite4"))
 ```
+
+
+
 
 Las 3 poblaciones en marrón (densidad > q casi 60) son en este orden Utrillas, Teruel y Andorra. El agujero (polígono en blanco) que hay al lado de Teruel creo que es La Puebla de valverde. Aparece en blanco porque en los datos sacados del INE su nombre es "Puebla de Valverde, La" y en la tabla de internet es "La Puebla de Valverde". No lo arreglo porque este blog es para aprender y relajarme y ya vale por hoy.
 
 <br>
 
-Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes. Usé `ggmpap`  `leaflet` y `ggplot2` y alguno más, pero todo se olvida, y ahora prefiero empezar con madatos espaciales por lo nuevo; that is, el pkg `sf`. `r emo::ji("sunglasses")`.
+Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes. Usé `ggmpap`  `leaflet` y `ggplot2` y alguno más, pero todo se olvida, y ahora prefiero empezar con datos espaciales por lo nuevo; that is, el pkg `sf`. `r emo::ji("sunglasses")`.
 
 <br>
 
