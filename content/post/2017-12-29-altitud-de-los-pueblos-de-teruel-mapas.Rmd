@@ -175,7 +175,7 @@ municipios@data$Densidad <- as.double(municipios@data$Densidad )
 
 ## Mapa por densidad de población
 
-```{r, eval = FALSE}
+```{r}
 sp::spplot(municipios, zcol = "Densidad", cuts = 2, col.regions  = c("cadetblue1", "antiquewhite2", "antiquewhite4"))
 ```
 
