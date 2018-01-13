@@ -499,14 +499,15 @@ aa &lt;- df %&gt;% filter(yes_2_names != 0) %&gt;%
 
 library(DT)
 DT_aa &lt;- datatable(aa, caption = &quot;Cuadro 3: Municipios con dos nombres oficiales&quot;,extensions = &#39;Scroller&#39;, options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = &quot;top&quot; )</code></pre>
-<p>Lo que pasa, es que Hugo (el programa que procesa el blog) parece que tiene problemas con los htmlwidgets y no se muestra la datatable. Una solución la explican <a href="https://owi.usgs.gov/blog/leaflet/">aquí</a>: hay que guardar la datatable en la carpeta <code>/static/</code>; yo lo he hecho en `/static/leaflet/DT_2_nombres_1.html y luego importarla en un iframe. A ver si lo consigo.</p>
+<p>Lo que pasa, es que Hugo (el programa que procesa el blog) parece que tiene problemas con los htmlwidgets y no se muestra la datatable. Una solución la explican <a href="https://owi.usgs.gov/blog/leaflet/">aquí</a>: hay que guardar la datatable en la carpeta <code>/static/</code>; yo lo he hecho en `/static/DT/DT_2_nombres_1.html y luego importarla en un iframe. A ver si lo consigo.</p>
 <pre class="r"><code>library(htmlwidgets)
 library(htmltools)
-saveWidget(DT_aa, &quot;/static/leaflet/DT_2_nombres_1.html&quot;)</code></pre>
-<p>Una vez guradado la DT, hay que importarla con:</p>
-<pre class="yaml"><code>&lt;iframe seamless src=&quot;/leaflet/DT_2_nombres_1.html&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;</code></pre>
+saveWidget(DT_aa, &quot;/static/DT/DT_2_nombres_1.html&quot;)</code></pre>
+<p>Una vez guardado la DT, hay que importarla con:</p>
+<pre class="yaml"><code>&lt;iframe seamless src=&quot;/DT/DT_2_nombres_1.html&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;</code></pre>
 <iframe seamless src="../../../../../leaflet/DT_2_nombres_1.html" width="100%" height="500">
 </iframe>
+<p>No queda tan chulo como si no hubiera que importarla, pero ya corregirán el “fallo” de blogdown con los htmlwidgets.</p>
 <p><br></p>
 <p>Bueno, pues ya debería estar, pero … las cosas no son tan sencillas en España. hay un pequeño lío!!! Resulta que lo que he hecho arriba es correcto: en España hay 119 municipios con 2 nombres oficiales, pero resulta que hay municipios que aunque sólo tienen un nombre oficial, este único nombre oficial incluye el nombre del municipio en 2 idiomas. Se entiende mejor con un ejemplo: el municipio con código <code>07032</code> tiene nombre oficial <code>Maó-Mahón</code>. Según la Wikipedia en castellano:</p>
 <blockquote>
@@ -784,7 +785,7 @@ Balears, Illes
 </table>
 <p>La provincia española con mayor porcentaje de municipios con “2 nombres” sigue siendo <code>Araba/Álava</code>, acercándose al 50%.</p>
 <p><br></p>
-<p>Para finalizar una tabla con los 31 nuevos municipios con 2 nombres que han aparecido con el nuevo criterio.</p>
+<p>Para finalizar una tabla con los 31 nuevos municipios con 2 nombres que han aparecido con el nuevo criterio. (ya sabéis que la tendré que importar como un iframe)</p>
 <pre class="r"><code>df &lt;- cod_INE_muni_pjp
 #-----selecciono municipios con con  &quot;-&quot; en Nombre Muni
 df_2 &lt;- df %&gt;% mutate(NOMBRE_tmp = NombreMuni) %&gt;% 
@@ -799,6 +800,8 @@ df_2 &lt;- df_2 %&gt;% filter(!(INECodCCAA == &quot;10&quot; &amp; str_detect(No
 aa &lt;- df_2 %&gt;% select(NombreMuni, NombreProv, NombreCCAA)</code></pre>
 <pre class="r"><code>library(DT)
 datatable(aa, caption = &quot;Cuadro 3a: (nuevos) Municipios con \&quot;dos nombres oficiales\&quot;&quot;,extensions = &#39;Scroller&#39;, options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = &quot;top&quot; )</code></pre>
+<iframe seamless src="../../../../../leaflet/DT_2_nombres_2.html" width="100%" height="500">
+</iframe>
 <p><br></p>
 <p>Se acabo!!! Faltan los mapas, pero para otro día/post. Me están entrando ganas de ver que provincia/CC.AA. española tiene mas municipios con nombre compuesto; por lo que he ido viendo al hacer el post apostaría por una de las dos Castillas, casi por Castilla-La Mancha, pero me resisto a la tentación.</p>
 <p><br></p>
@@ -836,14 +839,8 @@ datatable(aa, caption = &quot;Cuadro 3a: (nuevos) Municipios con \&quot;dos nomb
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="../../../../../blog/2018/01/12/prueba/">Prueba</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="../../../../../blog/2018/01/12/prueba/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

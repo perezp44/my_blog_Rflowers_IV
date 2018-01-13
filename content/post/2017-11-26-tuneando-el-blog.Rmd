@@ -28,7 +28,7 @@ Tengo ya "muchos" post en el cabolo: el de vacas, uno sobre gestionar los kippli
 
 - Para iniciar el blog: 
 
-  - En RStudio crea un nuevo proyecto (WEb Site with Hugo). Has de poner el theme, yo he puesto `yoshiharuyamashita/blackburn` pero tiene pbs con los htmlwidget, así que pruebo el theme "hugo-tranquilpeak-theme" que lo has de poner como  `kakawait/hugo-tranquilpeak-theme`. Se lo ví a <https://aurora-mareviv.github.io/>
+  - En RStudio crea un nuevo proyecto (Web Site with Hugo). Has de poner el theme, yo he puesto `yoshiharuyamashita/blackburn` pero tiene pbs con los htmlwidget, así que pruebo el theme "hugo-tranquilpeak-theme" que lo has de poner como  `kakawait/hugo-tranquilpeak-theme`. Se lo ví a <https://aurora-mareviv.github.io/>; pero tampoco me solucionaba el problema, así que **sigo con el blacburn theme**.
   
   
 - Si quieres que el deploy sea en ./docs de Github tienes que incluir en el config. toml: `publishDir = "docs"` ; y ademas incluir un archivo  named .nojekyll in the root of your pages repo and pushing it to GitHub. This should only be necessary if your site uses files or directories that start with underscores since Jekyll considers these to be special resources and does not copy them to the final site.
@@ -70,12 +70,34 @@ drafts/
 
 ## COSAS a mejorar:
 
-- Las imágenes las he de poner en `/static/` pero a mi me gustaría cargarlas directamente de Github, ¿Cómo?
+- Las imágenes las he de poner en `/static/` pero a mi me gustaría cargarlas directamente de Github. Lo hago así:
+
+```{r, eval = FALSE}
+knitr::include_graphics( c("/img/posts/tabla_municipios_Teruel.png) )
+```
+
 
 
 - Lo mismo con los datos, me gustaría cargarlo desde Github (ahora los datos desde un pkg en Github)
 
 - Las tablas que hago con kable me salen más feas en el blog que si las kniteo en RStudio
+
+
+- Pb con los htmlwidget (sólo me fue bien la primera DT). Lo has de hacer así: 
+
+```{r, eval = FALSE}
+library(htmlwidgets)
+library(htmltools)
+#- guardar el htmlwidget; en este caso una DT
+saveWidget(DT_aa, "/static/leaflet/DT_2_nombres_1.html")
+#- despues has de importarlo como in iframe:
+<iframe seamless src="/leaflet/DT_2_nombres_1.html" width="100%" height="500"></iframe>
+```
+
+
+
+
+
 
 
 
