@@ -134,22 +134,22 @@ library(DT)
 DT_aa <- datatable(aa, caption = "Cuadro 3: Municipios con dos nombres oficiales",extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 ```
 
-Lo que pasa, es que Hugo (el programa que procesa el blog) parece que tiene problemas con los htmlwidgets y no se muestra la datatable. Una solución la explican [aquí](https://owi.usgs.gov/blog/leaflet/): hay que guardar la datatable y luego importarla en un iframe. A ver si lo consigo.
+Lo que pasa, es que Hugo (el programa que procesa el blog) parece que tiene problemas con los htmlwidgets y no se muestra la datatable. Una solución la explican [aquí](https://owi.usgs.gov/blog/leaflet/): hay que guardar la datatable en la carpeta `/static/`; yo lo he hecho en `/static/leaflet/DT_2_nombres_1.html y luego importarla en un iframe. A ver si lo consigo.
 
 ```{r, eval = FALSE}
 library(htmlwidgets)
 library(htmltools)
-saveWidget(DT_aa, "DT_2_nombres_1.html")
+saveWidget(DT_aa, "/static/leaflet/DT_2_nombres_1.html")
 ```
 
 Una vez guradado la DT, hay que importarla con:
   
 ```yaml
-<iframe seamless src="/static/leaflet/leafMap/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="/leaflet/DT_2_nombres_1.html" width="100%" height="500"></iframe>
 ```
 
 
-<iframe seamless src="/leaflet/DT_2_nombres_1/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="/leaflet/DT_2_nombres_1.html" width="100%" height="500"></iframe>
   
   
   
