@@ -186,7 +186,7 @@ library(knitr)
 library(kableExtra)
 aa <- Teruel %>% select(1,3,5,7) %>%  slice(1:4) 
 #knitr::kable(aa, digits = 2, align = "c", caption = "Los 4 municipios de Teruel con más altitud" )
-kable(aa, "html", digits = 2, caption = "Los 4 municipios de Teruel con más altitud") %>%
+kable(aa, "html", digits = 2, align = "c", caption = "Los 4 municipios de Teruel con más altitud") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 
 ```
