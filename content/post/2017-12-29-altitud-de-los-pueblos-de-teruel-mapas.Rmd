@@ -120,11 +120,11 @@ sp::spplot(municipios, zcol = "Altitud", cuts = 2, col.regions  = c("cadetblue1"
 Gráfico de los municipios por altura. En color azulito las zonas por debajo de 600 metros, aproximadamente el [Bajo Aragón](https://es.wikipedia.org/wiki/Bajo_Arag%C3%B3n). En marrón oscuro las zonas más altas entre ellas mi pueblo. 
 
 
-Tengo que aprender un poco de palettes!! Justo cabo de ver [este pkg](https://github.com/AndreaCirilloAC/paletter)
+Tengo que aprender un poco de palettes!! Justo acabo de ver [este pkg](https://github.com/AndreaCirilloAC/paletter)
 
 
 
-Pero seguro que con `tmap` sale más bonito, y voy a dar más cortes en la escala
+Pero seguro que con `tmap` sale más bonito, y voy a poner algún corte más en la escala
 
 
 ```{r}
@@ -137,7 +137,7 @@ library(viridisLite)
   tm_layout(legend.position = c("right", "bottom"))
 ```
 
-Sí!! Sale más bonito.
+Sí!! Sale un poco más bonito.
 
 <br>
 
@@ -175,7 +175,7 @@ municipios@data$Densidad <- as.double(municipios@data$Densidad )
 
 ## Mapa por densidad de población
 
-```{r}
+```{r, eval = FALSE}
 sp::spplot(municipios, zcol = "Densidad", cuts = 2, col.regions  = c("cadetblue1", "antiquewhite2", "antiquewhite4"))
 ```
 
