@@ -260,8 +260,8 @@ DT_aa &lt;- datatable(aa, caption = &quot;Cuadro 3: Municipios con dos nombres o
 library(htmltools)
 saveWidget(DT_aa, &quot;DT_2_nombres_1.html&quot;)</code></pre>
 <p>Una vez guradado la DT, hay que importarla con:</p>
-<p><code>yaml &lt;iframe seamless src=&quot;/static/leaflet/leafMap/index.html&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;</code></p>
-<iframe seamless src="/static/leaflet/DT_2_nombres_1/index.html" width="100%" height="500">
+<pre class="yaml"><code>&lt;iframe seamless src=&quot;/static/leaflet/leafMap/index.html&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;</code></pre>
+<iframe seamless src="/leaflet/DT_2_nombres_1/index.html" width="100%" height="500">
 </iframe>
 <p><br></p>
 <p>Bueno, pues ya debería estar, pero … las cosas no son tan sencillas en España. hay un pequeño lío!!! Resulta que lo que he hecho arriba es correcto: en España hay 119 municipios con 2 nombres oficiales, pero resulta que hay municipios que aunque sólo tienen un nombre oficial, este único nombre oficial incluye el nombre del municipio en 2 idiomas. Se entiende mejor con un ejemplo: el municipio con código <code>07032</code> tiene nombre oficial <code>Maó-Mahón</code>. Según la Wikipedia en castellano:</p>

@@ -144,12 +144,12 @@ saveWidget(DT_aa, "DT_2_nombres_1.html")
 
 Una vez guradado la DT, hay que importarla con:
   
-  ```yaml
+```yaml
 <iframe seamless src="/static/leaflet/leafMap/index.html" width="100%" height="500"></iframe>
-  ```
+```
 
 
-<iframe seamless src="/static/leaflet/DT_2_nombres_1/index.html" width="100%" height="500"></iframe>
+<iframe seamless src="/leaflet/DT_2_nombres_1/index.html" width="100%" height="500"></iframe>
   
   
   
