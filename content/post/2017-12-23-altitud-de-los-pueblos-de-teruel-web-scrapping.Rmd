@@ -182,9 +182,13 @@ Teruel <- Teruel %>% mutate(Altitud = as.double(Altitud)) %>%
 Ya podemos imprimir los resultados... y los 4 pueblos/municipios más altos de Teruel son:
 
 ```{r}
+library(knitr)
 library(kableExtra)
 aa <- Teruel %>% select(1,3,5,7) %>%  slice(1:4) 
-knitr::kable(aa, digits = 2, align = "c", caption = "Los 4 municipios de Teruel con más altitud" )
+#knitr::kable(aa, digits = 2, align = "c", caption = "Los 4 municipios de Teruel con más altitud" )
+kable(aa, "html", digits = 2, caption = "Los 4 municipios de Teruel con más altitud") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+
 ```
  
 Hecho!! Valdelinares con 1692 metros es el campeón. Griegos el segundo. 

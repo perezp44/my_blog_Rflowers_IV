@@ -292,7 +292,7 @@ library(viridisLite)
 <p><img src="../../../../../post/2017-12-29-altitud-de-los-pueblos-de-teruel-mapas_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Sí!! Sale un poco más bonito.</p>
 <p><br></p>
-<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😱 😃</p>
+<p>Ahora un gráfico con los pueblos más altos que Pancrudo. Pancrudo es mi pueblo y lo voy a poner en rojo. En marrón oscuro los que nos ganan en altura. Tan tan arriba no creo que sea sano vivir!! 😱 😄</p>
 <p><br></p>
 <div id="mapa-con-los-pueblos-mas-altos-que-pancrudo" class="section level2">
 <h2>Mapa con los pueblos más altos que Pancrudo</h2>
@@ -312,6 +312,7 @@ plot(municipios[ sel, ], col = &quot;red&quot;, add = TRUE) # add selected zones
 <div id="mapa-por-densidad-de-poblacion" class="section level2">
 <h2>Mapa por densidad de población</h2>
 <pre class="r"><code>sp::spplot(municipios, zcol = &quot;Densidad&quot;, cuts = 2, col.regions  = c(&quot;cadetblue1&quot;, &quot;antiquewhite2&quot;, &quot;antiquewhite4&quot;))</code></pre>
+<p><img src="../../../../../post/2017-12-29-altitud-de-los-pueblos-de-teruel-mapas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Las 3 poblaciones en marrón (densidad &gt; q casi 60) son en este orden Utrillas, Teruel y Andorra. El agujero (polígono en blanco) que hay al lado de Teruel creo que es La Puebla de valverde. Aparece en blanco porque en los datos sacados del INE su nombre es “Puebla de Valverde, La” y en la tabla de internet es “La Puebla de Valverde”. No lo arreglo porque este blog es para aprender y relajarme y ya vale por hoy.</p>
 <p><br></p>
 <p>Bueno, como veis mis conocimientos sobre gráficos espaciales (y gráficos en general) en R es limitado, pero estoy en ello. De hecho hace como año y medio hacia gráficos bastante más potentes. Usé <code>ggmpap</code> <code>leaflet</code> y <code>ggplot2</code> y alguno más, pero todo se olvida, y ahora prefiero empezar con datos espaciales por lo nuevo; that is, el pkg <code>sf</code>. 😎.</p>

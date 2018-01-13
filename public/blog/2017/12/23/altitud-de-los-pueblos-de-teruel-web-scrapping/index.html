@@ -354,43 +354,88 @@ Teruel &lt;- Teruel %&gt;% mutate(Altitud = str_replace_all(Altitud,&quot;[[:pun
 <pre class="r"><code>Teruel &lt;- Teruel %&gt;% mutate(Altitud = as.double(Altitud)) %&gt;%    
                      arrange(desc(Altitud))</code></pre>
 <p>Ya podemos imprimir los resultados… y los 4 pueblos/municipios más altos de Teruel son:</p>
-<pre class="r"><code>library(kableExtra)
+<pre class="r"><code>library(knitr)
+library(kableExtra)
 aa &lt;- Teruel %&gt;% select(1,3,5,7) %&gt;%  slice(1:4) 
-knitr::kable(aa, digits = 2, align = &quot;c&quot;, caption = &quot;Los 4 municipios de Teruel con más altitud&quot; )</code></pre>
-<table>
-<caption><span id="tab:unnamed-chunk-12">Table 1: </span>Los 4 municipios de Teruel con más altitud</caption>
+#knitr::kable(aa, digits = 2, align = &quot;c&quot;, caption = &quot;Los 4 municipios de Teruel con más altitud&quot; )
+kable(aa, &quot;html&quot;, digits = 2, caption = &quot;Los 4 municipios de Teruel con más altitud&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;))</code></pre>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-12">Table 1: </span>Los 4 municipios de Teruel con más altitud
+</caption>
 <thead>
-<tr class="header">
-<th align="center">Nombre</th>
-<th align="center">Poblacion</th>
-<th align="center">Comarca</th>
-<th align="center">Altitud</th>
+<tr>
+<th style="text-align:left;">
+Nombre
+</th>
+<th style="text-align:left;">
+Poblacion
+</th>
+<th style="text-align:left;">
+Comarca
+</th>
+<th style="text-align:right;">
+Altitud
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center">Valdelinares</td>
-<td align="center">106</td>
-<td align="center">Gúdar-Javalambre</td>
-<td align="center">1692</td>
+<tr>
+<td style="text-align:left;">
+Valdelinares
+</td>
+<td style="text-align:left;">
+106
+</td>
+<td style="text-align:left;">
+Gúdar-Javalambre
+</td>
+<td style="text-align:right;">
+1692
+</td>
 </tr>
-<tr class="even">
-<td align="center">Griegos</td>
-<td align="center">143</td>
-<td align="center">Sierra de Albarracín</td>
-<td align="center">1601</td>
+<tr>
+<td style="text-align:left;">
+Griegos
+</td>
+<td style="text-align:left;">
+143
+</td>
+<td style="text-align:left;">
+Sierra de Albarracín
+</td>
+<td style="text-align:right;">
+1601
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Gúdar</td>
-<td align="center">77</td>
-<td align="center">Gúdar-Javalambre</td>
-<td align="center">1587</td>
+<tr>
+<td style="text-align:left;">
+Gúdar
+</td>
+<td style="text-align:left;">
+77
+</td>
+<td style="text-align:left;">
+Gúdar-Javalambre
+</td>
+<td style="text-align:right;">
+1587
+</td>
 </tr>
-<tr class="even">
-<td align="center">Bronchales</td>
-<td align="center">472</td>
-<td align="center">Sierra de Albarracín</td>
-<td align="center">1569</td>
+<tr>
+<td style="text-align:left;">
+Bronchales
+</td>
+<td style="text-align:left;">
+472
+</td>
+<td style="text-align:left;">
+Sierra de Albarracín
+</td>
+<td style="text-align:right;">
+1569
+</td>
 </tr>
 </tbody>
 </table>
