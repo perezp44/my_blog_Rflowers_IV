@@ -149,7 +149,7 @@ Una vez guardado la DT, hay que importarla con:
 ```
 
 
-<iframe seamless src="/leaflet/DT_2_nombres_1.html" width="100%" height="500"></iframe>
+<iframe seamless src="/DT/DT_2_nombres_1.html" width="100%" height="500"></iframe>
   
 No queda tan chulo como si no hubiera que importarla, pero ya corregirán el "fallo" de blogdown con los htmlwidgets. 
   
@@ -277,7 +277,7 @@ library(DT)
 datatable(aa, caption = "Cuadro 3a: (nuevos) Municipios con \"dos nombres oficiales\"",extensions = 'Scroller', options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = "top" )
 ```
 
-<iframe seamless src="/leaflet/DT_2_nombres_2.html" width="100%" height="500"></iframe>
+<iframe seamless src="/DT/DT_2_nombres_2.html" width="100%" height="500"></iframe>
 
 
 

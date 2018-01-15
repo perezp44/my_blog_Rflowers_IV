@@ -505,7 +505,7 @@ library(htmltools)
 saveWidget(DT_aa, &quot;/static/DT/DT_2_nombres_1.html&quot;)</code></pre>
 <p>Una vez guardado la DT, hay que importarla con:</p>
 <pre class="yaml"><code>&lt;iframe seamless src=&quot;/DT/DT_2_nombres_1.html&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;</code></pre>
-<iframe seamless src="../../../../../leaflet/DT_2_nombres_1.html" width="100%" height="500">
+<iframe seamless src="../../../../../DT/DT_2_nombres_1.html" width="100%" height="500">
 </iframe>
 <p>No queda tan chulo como si no hubiera que importarla, pero ya corregirán el “fallo” de blogdown con los htmlwidgets.</p>
 <p><br></p>
@@ -800,7 +800,7 @@ df_2 &lt;- df_2 %&gt;% filter(!(INECodCCAA == &quot;10&quot; &amp; str_detect(No
 aa &lt;- df_2 %&gt;% select(NombreMuni, NombreProv, NombreCCAA)</code></pre>
 <pre class="r"><code>library(DT)
 datatable(aa, caption = &quot;Cuadro 3a: (nuevos) Municipios con \&quot;dos nombres oficiales\&quot;&quot;,extensions = &#39;Scroller&#39;, options = list( pageLength = 10, deferRender = TRUE,scrollY = 400,scroller = TRUE), rownames = F, filter = &quot;top&quot; )</code></pre>
-<iframe seamless src="../../../../../leaflet/DT_2_nombres_2.html" width="100%" height="500">
+<iframe seamless src="../../../../../DT/DT_2_nombres_2.html" width="100%" height="500">
 </iframe>
 <p><br></p>
 <p>Se acabo!!! Faltan los mapas, pero para otro día/post. Me están entrando ganas de ver que provincia/CC.AA. española tiene mas municipios con nombre compuesto; por lo que he ido viendo al hacer el post apostaría por una de las dos Castillas, casi por Castilla-La Mancha, pero me resisto a la tentación.</p>
