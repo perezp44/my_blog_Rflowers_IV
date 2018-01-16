@@ -51,13 +51,34 @@ aa %>% kable(format = "markdown")
 
 
 ```{r}
-aa %>% kable(format = "latex")
+library(knitr)
+aa %>% kable(format = "markdown", results = "asis")
 ```
+
+
+```{r}
+library(knitr)
+aa %>% kable(format = "markdown", results = "markup")
+```
+
+
 
 
 ```{r}
 aa %>% kable(format = "pandoc")
 ```
+
+```{r}
+library(knitr)
+aa %>% kable(format = "pandoc", results = "asis")
+```
+
+
+```{r}
+library(knitr)
+aa %>% kable(format = "pandoc", results = "markup")
+```
+
 
 
 
@@ -67,9 +88,6 @@ aa %>% kable(format = "html", results = "asis")
 
 
 
-```{r}
-aa %>% kable(format = "rst")
-```
 
 ```{r}
 library(kableExtra)
