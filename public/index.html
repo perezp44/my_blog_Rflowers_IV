@@ -260,7 +260,7 @@
 
   <p>
   Pues eso, que quiero ver como salen las tablas:
-df &lt;- cod_INE_muni_pjpdf &lt;- df %&gt;% mutate(NOMBRE_tmp = NombreMuni) %&gt;% separate(NOMBRE_tmp, into = c(&quot;name_1&quot;, &quot;name_2&quot;), sep = &quot;/&quot;) %&gt;% mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %&gt;% select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())aa &lt;- df %&gt;% group_by(NombreCCAA) %&gt;% summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %&gt;% filter(Muni_2_nombres != 0) %&gt;% arrange(desc(percent))library(knitr)aa %&gt;% kable(format = &quot;markdown&quot;)NombreCCAAMunicipiosMuni_2_nombrespercentNavarra, Comunidad Foral de272640.
+df &lt;- cod_INE_muni_pjpdf &lt;- df %&gt;% mutate(NOMBRE_tmp = NombreMuni) %&gt;% separate(NOMBRE_tmp, into = c(&quot;name_1&quot;, &quot;name_2&quot;), sep = &quot;/&quot;) %&gt;% mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %&gt;% select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())aa &lt;- df %&gt;% group_by(NombreCCAA) %&gt;% summarise(Municipios = n(), dos_nombres = sum(yes_2_names), percent = dos_nombres/Municipios) %&gt;% filter(dos_nombres != 0) %&gt;% arrange(desc(percent))library(knitr)aa %&gt;% kable(format = &quot;markdown&quot;, caption = &quot;Tabla 1&quot;, digits = 2)NombreCCAAMunicipiosdos_nombrespercentNavarra, Comunidad Foral de272640.
   </p>
 
   

@@ -17,17 +17,17 @@ df &lt;- df %&gt;% mutate(NOMBRE_tmp = NombreMuni) %&gt;%
   mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %&gt;% 
   select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())
 aa &lt;- df %&gt;% group_by(NombreCCAA) %&gt;% 
-  summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %&gt;% 
-  filter(Muni_2_nombres != 0) %&gt;% 
+  summarise(Municipios = n(), dos_nombres = sum(yes_2_names), percent = dos_nombres/Municipios) %&gt;% 
+  filter(dos_nombres != 0) %&gt;% 
   arrange(desc(percent))</code></pre>
 <pre class="r"><code>library(knitr)
-aa %&gt;% kable(format = &quot;markdown&quot;)</code></pre>
+aa %&gt;% kable(format = &quot;markdown&quot;, caption = &quot;Tabla 1&quot;, digits = 2)</code></pre>
 <table>
 <thead>
 <tr class="header">
 <th align="left">NombreCCAA</th>
 <th align="right">Municipios</th>
-<th align="right">Muni_2_nombres</th>
+<th align="right">dos_nombres</th>
 <th align="right">percent</th>
 </tr>
 </thead>
@@ -36,19 +36,19 @@ aa %&gt;% kable(format = &quot;markdown&quot;)</code></pre>
 <td align="left">Navarra, Comunidad Foral de</td>
 <td align="right">272</td>
 <td align="right">64</td>
-<td align="right">0.2352941</td>
+<td align="right">0.24</td>
 </tr>
 <tr class="even">
 <td align="left">País Vasco</td>
 <td align="right">251</td>
 <td align="right">22</td>
-<td align="right">0.0876494</td>
+<td align="right">0.09</td>
 </tr>
 <tr class="odd">
 <td align="left">Comunitat Valenciana</td>
 <td align="right">542</td>
 <td align="right">33</td>
-<td align="right">0.0608856</td>
+<td align="right">0.06</td>
 </tr>
 </tbody>
 </table>
@@ -59,7 +59,7 @@ aa %&gt;% kable(format = &quot;markdown&quot;, results = &quot;asis&quot;)</code
 <tr class="header">
 <th align="left">NombreCCAA</th>
 <th align="right">Municipios</th>
-<th align="right">Muni_2_nombres</th>
+<th align="right">dos_nombres</th>
 <th align="right">percent</th>
 </tr>
 </thead>
@@ -90,7 +90,7 @@ aa %&gt;% kable(format = &quot;markdown&quot;, results = &quot;asis&quot;)</code
 <tr class="header">
 <th align="left">NombreCCAA</th>
 <th align="right">Municipios</th>
-<th align="right">Muni_2_nombres</th>
+<th align="right">dos_nombres</th>
 <th align="right">percent</th>
 </tr>
 </thead>
@@ -122,7 +122,7 @@ aa %&gt;% kable(format = &quot;pandoc&quot;, results = &quot;asis&quot;)</code><
 <tr class="header">
 <th align="left">NombreCCAA</th>
 <th align="right">Municipios</th>
-<th align="right">Muni_2_nombres</th>
+<th align="right">dos_nombres</th>
 <th align="right">percent</th>
 </tr>
 </thead>
@@ -154,7 +154,7 @@ aa %&gt;% kable(format = &quot;pandoc&quot;, results = &quot;markup&quot;)</code
 <tr class="header">
 <th align="left">NombreCCAA</th>
 <th align="right">Municipios</th>
-<th align="right">Muni_2_nombres</th>
+<th align="right">dos_nombres</th>
 <th align="right">percent</th>
 </tr>
 </thead>
@@ -190,7 +190,7 @@ NombreCCAA
 Municipios
 </th>
 <th style="text-align:right;">
-Muni_2_nombres
+dos_nombres
 </th>
 <th style="text-align:right;">
 percent
@@ -253,7 +253,7 @@ NombreCCAA
 Municipios
 </th>
 <th style="text-align:right;">
-Muni_2_nombres
+dos_nombres
 </th>
 <th style="text-align:right;">
 percent
@@ -321,7 +321,7 @@ NombreCCAA
 Municipios
 </th>
 <th style="text-align:right;">
-Muni_2_nombres
+dos_nombres
 </th>
 <th style="text-align:right;">
 percent
@@ -385,7 +385,7 @@ NombreCCAA
 Municipios
 </th>
 <th style="text-align:right;">
-Muni_2_nombres
+dos_nombres
 </th>
 <th style="text-align:right;">
 percent
@@ -444,7 +444,7 @@ pander(aa, style = &quot;rmarkdown&quot;)</code></pre>
 <tr class="header">
 <th align="center">NombreCCAA</th>
 <th align="center">Municipios</th>
-<th align="center">Muni_2_nombres</th>
+<th align="center">dos_nombres</th>
 <th align="center">percent</th>
 </tr>
 </thead>
@@ -471,18 +471,18 @@ pander(aa, style = &quot;rmarkdown&quot;)</code></pre>
 </table>
 <pre class="r"><code>library(&quot;pander&quot;)
 pander(aa, style = &quot;grid&quot;)</code></pre>
-<table style="width:97%;">
+<table style="width:93%;">
 <colgroup>
 <col width="41%" />
 <col width="18%" />
-<col width="23%" />
+<col width="19%" />
 <col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>NombreCCAA</th>
 <th>Municipios</th>
-<th>Muni_2_nombres</th>
+<th>dos_nombres</th>
 <th>percent</th>
 </tr>
 </thead>
@@ -490,19 +490,19 @@ pander(aa, style = &quot;grid&quot;)</code></pre>
 <tr class="odd">
 <td><p>Navarra, Comunidad Foral de</p></td>
 <td><p>272</p></td>
-<td><pre><code>  64</code></pre></td>
+<td><pre><code>64</code></pre></td>
 <td><p>0.2353</p></td>
 </tr>
 <tr class="even">
 <td><pre><code>    PaÃ­s Vasco</code></pre></td>
 <td><p>251</p></td>
-<td><pre><code>  22</code></pre></td>
+<td><pre><code>22</code></pre></td>
 <td><p>0.08765</p></td>
 </tr>
 <tr class="odd">
 <td><p>Comunitat Valenciana</p></td>
 <td><p>542</p></td>
-<td><pre><code>  33</code></pre></td>
+<td><pre><code>33</code></pre></td>
 <td><p>0.06089</p></td>
 </tr>
 </tbody>
@@ -524,7 +524,7 @@ NombreCCAA
 Municipios
 </th>
 <th style="text-align:right;">
-Muni_2_nombres
+dos_nombres
 </th>
 <th style="text-align:right;">
 percent

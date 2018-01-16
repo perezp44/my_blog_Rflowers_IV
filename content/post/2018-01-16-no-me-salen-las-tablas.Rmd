@@ -37,8 +37,8 @@ df <- df %>% mutate(NOMBRE_tmp = NombreMuni) %>%
   mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %>% 
   select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())
 aa <- df %>% group_by(NombreCCAA) %>% 
-  summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %>% 
-  filter(Muni_2_nombres != 0) %>% 
+  summarise(Municipios = n(), dos_nombres = sum(yes_2_names), percent = dos_nombres/Municipios) %>% 
+  filter(dos_nombres != 0) %>% 
   arrange(desc(percent))
 ```
 
@@ -46,7 +46,7 @@ aa <- df %>% group_by(NombreCCAA) %>%
 
 ```{r}
 library(knitr)
-aa %>% kable(format = "markdown")
+aa %>% kable(format = "markdown", caption = "Tabla 1", digits = 2)
 ```
 
 
