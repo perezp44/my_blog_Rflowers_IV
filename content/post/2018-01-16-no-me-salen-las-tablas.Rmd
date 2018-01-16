@@ -1,0 +1,111 @@
+---
+title: No me salen las tablas
+author: Pedro
+date: '2018-01-16'
+slug: no-me-salen-las-tablas
+categories: []
+tags:
+  - pruebas
+---
+
+
+
+```{r chunk_setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = TRUE )
+```
+
+```{r options_setup, echo = FALSE}
+options(scipen = 999) #- para quitar la notacion científica
+```
+ 
+```{r cargar_pkgs, echo = FALSE}
+library("personal.pjp")
+library(mypkgDataforblog) #- personal pkg
+library(stringr)
+library(tidyverse)
+library(kableExtra)
+```
+
+
+Pues eso, que quiero ver como salen las tablas:
+
+
+```{r}
+df <- cod_INE_muni_pjp
+df <- df %>% mutate(NOMBRE_tmp = NombreMuni) %>% 
+  separate(NOMBRE_tmp, into = c("name_1", "name_2"), sep = "/")  %>% 
+  mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %>% 
+  select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())
+aa <- df %>% group_by(NombreCCAA) %>% 
+  summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %>% 
+  filter(Muni_2_nombres != 0) %>% 
+  arrange(desc(percent))
+```
+
+
+
+```{r}
+library(knitr)
+aa %>% kable(format = "markdown")
+```
+
+
+```{r}
+aa %>% kable(format = "latex")
+```
+
+
+```{r}
+aa %>% kable(format = "pandoc")
+```
+
+
+
+```{r}
+aa %>% kable(format = "html")
+```
+
+
+
+```{r}
+aa %>% kable(format = "rst")
+```
+
+```{r}
+library(kableExtra)
+aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+
+
+```{r}
+kable(aa, "html") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```
+
+
+
+```{r}
+library("pander")
+pander(aa, style = "rmarkdown")
+
+```
+
+
+
+```{r}
+library(stargazer)
+stargazer(aa, type = "html") 
+```
+
+```{r}
+library(formattable)
+formattable(aa)
+```
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pruebas on R &amp; Flowers 4</title>
+    <link>/tags/pruebas/</link>
+    <description>Recent content in Pruebas on R &amp; Flowers 4</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>&amp;copy; 2017</copyright>
+    <lastBuildDate>Tue, 16 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/pruebas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No me salen las tablas</title>
+      <link>/blog/2018/01/16/no-me-salen-las-tablas/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/01/16/no-me-salen-las-tablas/</guid>
+      <description>Pues eso, que quiero ver como salen las tablas:
+df &amp;lt;- cod_INE_muni_pjpdf &amp;lt;- df %&amp;gt;% mutate(NOMBRE_tmp = NombreMuni) %&amp;gt;% separate(NOMBRE_tmp, into = c(&amp;quot;name_1&amp;quot;, &amp;quot;name_2&amp;quot;), sep = &amp;quot;/&amp;quot;) %&amp;gt;% mutate(yes_2_names = if_else(is.na(name_2), 0.0, 1.0)) %&amp;gt;% select(INECodMuni, NombreMuni, yes_2_names, name_1, name_2, NombreCCAA, everything())aa &amp;lt;- df %&amp;gt;% group_by(NombreCCAA) %&amp;gt;% summarise(Municipios = n(), Muni_2_nombres = sum(yes_2_names), percent = Muni_2_nombres/Municipios) %&amp;gt;% filter(Muni_2_nombres != 0) %&amp;gt;% arrange(desc(percent))library(knitr)aa %&amp;gt;% kable(format = &amp;quot;markdown&amp;quot;)NombreCCAAMunicipiosMuni_2_nombrespercentNavarra, Comunidad Foral de272640.</description>
+    </item>
+    
+  </channel>
+</rss>
