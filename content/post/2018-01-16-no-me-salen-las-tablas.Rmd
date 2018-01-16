@@ -132,7 +132,9 @@ formattable(aa)
 ```
 
 
+Ni las formulas
 
+$$y_{1}$$
 
 
 
