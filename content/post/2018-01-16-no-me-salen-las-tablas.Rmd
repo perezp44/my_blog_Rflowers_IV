@@ -62,7 +62,7 @@ aa %>% kable(format = "pandoc")
 
 
 ```{r}
-aa %>% kable(format = "html")
+aa %>% kable(format = "html", results = "asis")
 ```
 
 
@@ -73,7 +73,7 @@ aa %>% kable(format = "rst")
 
 ```{r}
 library(kableExtra)
-aa %>% kable("html", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+aa %>% kable("html", results = "asis", digits = 2, caption = "Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 

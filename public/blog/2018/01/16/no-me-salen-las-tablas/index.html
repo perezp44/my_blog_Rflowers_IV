@@ -320,7 +320,7 @@ aa %&gt;% kable(format = &quot;markdown&quot;)</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>aa %&gt;% kable(format = &quot;html&quot;)</code></pre>
+<pre class="r"><code>aa %&gt;% kable(format = &quot;html&quot;, results = &quot;asis&quot;)</code></pre>
 <table>
 <thead>
 <tr>
@@ -386,7 +386,7 @@ Comunitat Valenciana
 <pre class="r"><code>aa %&gt;% kable(format = &quot;rst&quot;)</code></pre>
 <p>=========================== ========== ============== ========= NombreCCAA Municipios Muni_2_nombres percent =========================== ========== ============== ========= Navarra, Comunidad Foral de 272 64 0.2352941 País Vasco 251 22 0.0876494 Comunitat Valenciana 542 33 0.0608856 =========================== ========== ============== =========</p>
 <pre class="r"><code>library(kableExtra)
-aa %&gt;% kable(&quot;html&quot;, digits = 2, caption = &quot;Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)&quot;) %&gt;% kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
+aa %&gt;% kable(&quot;html&quot;, results = &quot;asis&quot;, digits = 2, caption = &quot;Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)&quot;) %&gt;% kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:unnamed-chunk-7">Table 1: </span>Cuadro 1: Municipios españoles con dos nombres oficiales (por CC.AA.)
